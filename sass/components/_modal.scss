@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -24,8 +24,9 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  width: 528px;
-  height: 581px;
+  width: 95%;
+  width: 450px;
+  height: auto;
   padding: 40px;
   border-radius: 4px;
   background-color: $background__color--main;
@@ -34,10 +35,17 @@
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+    height: 581px;
+  }
+
   &__title {
+    text-align: center;
     margin-bottom: 12px;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
+    // line-height: 1.15;
     letter-spacing: 0.03em;
   }
 
@@ -88,6 +96,20 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+
+    &:nth-child(4) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__agrement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: $text__color--light;
+    margin-bottom: 30px;
   }
 
   &__name {
@@ -109,6 +131,11 @@
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      border-color: $accent__color--main;
+    }
   }
 
   &__icon {
@@ -124,24 +151,9 @@
   fill: $accent__color--main;
 }
 
-.form__input:hover,
-.form__input:focus {
-  border-color: $accent__color--main;
-}
-
 .form__input.coment {
   height: 120px;
   padding-left: 16px;
-}
-
-.form__agrement {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: $text__color--light;
-  margin-bottom: 30px;
 }
 
 .agrement-input {
@@ -164,6 +176,7 @@
 }
 
 .agrement-text {
+  font-size: 12px;
   line-height: 1.8;
   letter-spacing: 0.03em;
   color: $text__color--light;
@@ -171,6 +184,7 @@
 }
 
 .agrement-link {
+  font-size: 12px;
   line-height: 1.8;
   letter-spacing: 0.03em;
   text-decoration: underline;

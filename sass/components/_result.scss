@@ -1,6 +1,10 @@
 .result {
   padding-bottom: 94px;
 
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+
   &__list {
     display: flex;
   }
@@ -15,7 +19,7 @@
 
   &__title {
     position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     left: 0;
     padding: 27px 0;
     width: 100%;
